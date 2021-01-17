@@ -8,7 +8,7 @@ $("#submit-btn").on("click", (evt) => {
   evt.preventDefault();
   const searchWords = $("#search-input").val();
   const searchQuery = prepareQuery(splitInput(searchWords));
-  const url = `http://www.omdbapi.com/?&apikey=5a67b678&s=${searchQuery}&type="movie"`
+  const url = `https://www.omdbapi.com/?&apikey=5a67b678&s=${searchQuery}&type="movie"`
   movieRequest(url);
   $("#movie-search")[0].reset();
 });

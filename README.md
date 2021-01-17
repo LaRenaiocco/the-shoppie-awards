@@ -3,15 +3,12 @@ The Shoppie awards is a front end only web-app using using JavaScript to call th
 
 ## About the Developer
 Before attending Hackbright Academy, LaRena spent most of her adult life clowning around in the circus (yes, you read that right).  She studied Theatre in college and then honed her circus and clowning skills at the San Francisco Clown Conservatory.  LaRena spent 8 years touring full time in the US, Mexico and Japan with Ringling Bros. and Barnum & Bailey as well as Kinoshita Circus. Despite her passion for travel, being on the road 52 weeks a year can wear out even the most seasoned traveller.  Looking to live in one place and ready for the next step in her career, coupled with massive amounts of time in the current pandemic, LaRena discovered a love for software development and has enjoyed putting her previously unused math and logic skills to good use and learning to code.
-<!-- ## Deployment
- http://adventure-awaits.fun/ -->
 
-## Contents
-* [Tech Stack](#tech-stack)
-* [Features](#features)
-* [License](#license)
+## Deployment
+ https://larenaiocco.github.io/the-shoppie-awards/
 
-## <a name="tech-stack"></a>Technologies
+
+## Technologies
 * JavaScript
 * jQuery
 * HTML
@@ -19,7 +16,7 @@ Before attending Hackbright Academy, LaRena spent most of her adult life clownin
 * Bootstrap
 * OMDB API
 
-## <a name="features"></a>Features
+## Features
 
 * Search for Movies in the Open Movie Database
 * View search results
@@ -28,7 +25,7 @@ Before attending Hackbright Academy, LaRena spent most of her adult life clownin
 * Remove movies from the nominations list
 
 
-## <a name="license"></a>License
+## License
 MIT License
 
 Copyright (c) 2021 LaRenaiocco

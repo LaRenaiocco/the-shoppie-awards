@@ -1,10 +1,6 @@
 "use strict"
 
-const nomsList = []
-
-nomsList.forEach(movie => {
-  createNomination(movie)
-})
+let nomsList = [];
 
 // handles submit of movie search form
 $("#submit-btn").on("click", (evt) => {
@@ -80,12 +76,39 @@ function createMovieCard(movie) {
   nomBtn.setAttribute("class", "btn btn-info nom-btn")
   nomBtn.setAttribute("id", `nomBtn${movie.imdbID}`)
   nomBtn.textContent = "Nominate Me"
-  nomBtn.addEventListener("click", () => {
-    alert('trigger nominate')
-    nomsList.push(movie)
-    console.log(nomsList)
-    createNomination(movie)
+  if (nomsList.includes(movie.imdbID)) {
     nomBtn.disabled = true
+  }
+  // const alreadyNomed = document.getElementById(`#nom${movie.imdbID}`)
+  // console.log(alreadyNomed)
+//   if((`#nom${movie.imdbID}`).length > 0){
+//     alert('Element exists!');
+// } else{
+//     alert('Element does not exist!');
+// }
+  // if ($(`#nom${movie.imdbID}`) in $("#nominations")) {
+  //   nomBtn.disabled = true
+  // }
+  // checkNominations(movie)
+  nomBtn.addEventListener("click", () => {
+    nomsList.push(movie.imdbID)
+    if (nomsList.length > 5){
+      console.log(nomsList.length)
+      alert("You may only nominate 5 movies!")
+      nomsList.pop()
+      console.log(nomsList.length)
+
+    } else {
+      createNomination(movie)
+      nomBtn.disabled = true
+      const nomsLength = (document.getElementById("nominations")
+                          .getElementsByClassName("nomination-li")
+                          .length)
+      console.log(nomsLength)
+      if (nomsLength == 5) {
+        $('#finishedModal').modal('toggle');
+      }
+    }
   })
   cardBody.appendChild(nomBtn)
 
@@ -93,8 +116,8 @@ function createMovieCard(movie) {
 }
 
 function createNomination(movie) {
-  const nom = document.createElement("div")
-  nom.setAttribute("class", "nomination")
+  const nom = document.createElement("li")
+  nom.setAttribute("class", "nomination-li")
   nom.setAttribute("id", `nom${movie.imdbID}`)
 
   const nomTitle = document.createElement("span")
@@ -104,9 +127,11 @@ function createNomination(movie) {
   unNomBtn.setAttribute("class", "btn btn-info")
   unNomBtn.textContent = "Un-nominate me"
   unNomBtn.addEventListener('click', () => {
-    alert("remove element")
     nom.remove()
+    console.log(nomsList)
     const nomBtn = document.getElementById(`nomBtn${movie.imdbID}`)
+    nomsList = nomsList.filter(item => item !== movie.imdbID)
+    console.log(nomsList)
     nomBtn.disabled = false
   })
 
@@ -119,6 +144,5 @@ function createNomination(movie) {
 $(".btn-close").on('click', () => {
   $('#finishedModal').modal('toggle')
 })
-
 
 

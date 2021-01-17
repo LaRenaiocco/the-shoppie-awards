@@ -18,33 +18,36 @@
     </script>
   </head>
   <body>
-    <div id="heading">
-      <h1>The Shoppies</h1>
-      <h5>A front end project by LaRena Iocco</h5>
-    </div>
-    <div id="search-form-div">
-      <form id="movie-search">
-        <input  type="text"
-                id="search-input"
-                placeholder="Enter a movie title or keyword here..."
-        />
-        <button type="submit"
-                id="submit-btn">
-          Search      
-        </button>
-      </form>
-    </div>
-    <div class="row">
-      <div class="col-8">
-        <h5>Search results:</h5>
-        <div id="results"></div>
+    <div id="body-container">
+      <div id="heading">
+        <h1>The Shoppies</h1>
+        <h5>A front end project by LaRena Iocco</h5>
       </div>
-      <div class="col-4">
-        <h5>Your nominees are:</h5>
-        <ul id="nominations"></ul>
+      <div id="search-form-div">
+        <form id="movie-search">
+          <input  type="text"
+                  id="search-input"
+                  placeholder="Enter a movie title or keyword here..."
+          />
+          <button type="submit"
+                  class="btn btn-light"
+                  id="submit-btn">
+            Search      
+          </button>
+        </form>
       </div>
-    </div>
-    <div class="modal fade" id="finishedModal" tabindex="-1" aria-labelledby="finishedModalLabel" aria-hidden="true">
+      <div class="row">
+        <div class="col-8">
+          <h5 id="result-heading">Search results:</h5>
+          <div id="results">
+          </div>
+        </div>
+        <div class="col-4">
+          <h5 id="nominee-heading">Nominees:</h5>
+          <ul id="nominations"></ul>
+        </div>
+      </div>
+      <div class="modal fade" id="finishedModal" tabindex="-1" aria-labelledby="finishedModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -61,6 +64,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <script src="index.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 

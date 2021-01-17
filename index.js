@@ -63,7 +63,7 @@ function createMovieCard(movie) {
 	cardBody.setAttribute("class", "card-body");
 	movieCard.appendChild(cardBody);
 
-	const cardTitle = document.createElement("h6");
+	const cardTitle = document.createElement("div");
 	cardTitle.setAttribute("class", "card-title");
 	cardTitle.textContent = movie.Title;
   cardBody.appendChild(cardTitle);
@@ -74,7 +74,7 @@ function createMovieCard(movie) {
   cardBody.appendChild(movieYear);
     
   const nomBtn = document.createElement("button");
-  nomBtn.setAttribute("class", "btn btn-info nom-btn");
+  nomBtn.setAttribute("class", "btn btn-light nom-btn");
   nomBtn.setAttribute("id", `nomBtn${movie.imdbID}`);
   nomBtn.textContent = "Nominate Me";
   cardBody.appendChild(nomBtn);
@@ -120,7 +120,7 @@ function createNomination(movie) {
 
   // button handles removing nomination if user changes mind
   const unNomBtn = document.createElement("button")
-  unNomBtn.setAttribute("class", "btn btn-info")
+  unNomBtn.setAttribute("class", "btn btn-light un-nom-btn")
   unNomBtn.textContent = "Un-nominate me"
   unNomBtn.addEventListener('click', () => {
     nom.remove()

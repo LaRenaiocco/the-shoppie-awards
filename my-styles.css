@@ -3,15 +3,74 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    background-image: url(background.jpg);
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Press Start 2P', sans-serif;
 }
 
+ul {
+    text-align: left;
+}
+
 .card {
-    width: 10rem;
+    width: 13rem;
     display: inline-block;
     padding: 5px;
     margin: 5px;
+    font-size: smaller;
+}
+
+.card-title {
+    font-weight: 900;
+    font-size: large;
+    margin-bottom: .1rem;
+}
+
+.card-body {
+    margin: 2px;
+    padding: 2px;
+}
+.btn-light {
+    border: 1px solid black;
+}
+
+.un-nom-btn {
+    font-size: xx-small;
+    padding: 2px;
+    margin-left: 5px;
+}
+
+#body-container {
+    background-color: rgba(253, 249, 255, 0.8);
+    margin: 75px;
+    text-align: center;
+}
+
+#search-input {
+    width: 100%;
+}
+
+#movie-search {
+    margin: 20px
+}
+
+#submit-btn {
+    margin: 5px;
+}
+
+#result-heading {
+    text-align: left;
+    margin: 20px
+}
+
+#nominee-heading {
+    text-align: left;
+    margin: 20px
 }

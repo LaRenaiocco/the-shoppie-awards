@@ -8,6 +8,8 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
           crossorigin="anonymous"/>
+    <link rel="stylesheet" 
+          href="my-styles.css"/> 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
           integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
           crossorigin="anonymous">
@@ -30,11 +32,32 @@
         </button>
       </form>
     </div>
-    <div id="results">
-      <h5>Search results:</h5>
+    <div class="row">
+      <div class="col-8">
+        <h5>Search results:</h5>
+        <div id="results"></div>
+      </div>
+      <div class="col-4">
+        <h5>Your nominees are:</h5>
+        <div id="nominations"></div>
+      </div>
     </div>
-    <div id="noms">
-      <h5>Your nominees are:</h5>
+    <div class="modal fade" id="finishedModal" tabindex="-1" aria-labelledby="finishedModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="finishedModalLabel">Congratulations!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            You have nominated 5 movies for The Shoppies. <br/>
+            Thank you!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info btn-close" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="index.js"></script> 

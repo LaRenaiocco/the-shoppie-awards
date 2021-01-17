@@ -1,0 +1,17 @@
+/* font-family: 'Press Start 2P', sans-serif; */
+/* font-family: 'Quicksand', sans-serif; */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.card {
+    width: 10rem;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}

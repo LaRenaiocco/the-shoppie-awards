@@ -33,9 +33,7 @@ function movieRequest(url) {
     if (data.Response === "False") {
       alert(`${data.Error} Please check your spelling!`)
     } else {
-      console.log(data)
       const movies = data.Search
-      console.log(movies)
       movies.forEach(movie => {
         createMovieCard(movie)
       })
@@ -79,24 +77,11 @@ function createMovieCard(movie) {
   if (nomsList.includes(movie.imdbID)) {
     nomBtn.disabled = true
   }
-  // const alreadyNomed = document.getElementById(`#nom${movie.imdbID}`)
-  // console.log(alreadyNomed)
-//   if((`#nom${movie.imdbID}`).length > 0){
-//     alert('Element exists!');
-// } else{
-//     alert('Element does not exist!');
-// }
-  // if ($(`#nom${movie.imdbID}`) in $("#nominations")) {
-  //   nomBtn.disabled = true
-  // }
-  // checkNominations(movie)
   nomBtn.addEventListener("click", () => {
     nomsList.push(movie.imdbID)
     if (nomsList.length > 5){
-      console.log(nomsList.length)
       alert("You may only nominate 5 movies!")
       nomsList.pop()
-      console.log(nomsList.length)
 
     } else {
       createNomination(movie)
@@ -104,7 +89,6 @@ function createMovieCard(movie) {
       const nomsLength = (document.getElementById("nominations")
                           .getElementsByClassName("nomination-li")
                           .length)
-      console.log(nomsLength)
       if (nomsLength == 5) {
         $('#finishedModal').modal('toggle');
       }
@@ -128,10 +112,8 @@ function createNomination(movie) {
   unNomBtn.textContent = "Un-nominate me"
   unNomBtn.addEventListener('click', () => {
     nom.remove()
-    console.log(nomsList)
     const nomBtn = document.getElementById(`nomBtn${movie.imdbID}`)
     nomsList = nomsList.filter(item => item !== movie.imdbID)
-    console.log(nomsList)
     nomBtn.disabled = false
   })
 
